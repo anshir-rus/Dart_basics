@@ -1,10 +1,33 @@
 import 'dart:math';
 
+extension NumExtensions on num {
+  bool get isInt => (this % 1) == 0;
+  bool get isNatural => this > 0 && this.isInt;
+}
+
 class Calculator {
   int nod(int var1, int var2) {
     int a = 0;
     int b = 0;
     int c = 0;
+
+    if (!var1.isNatural) {
+      throw FormatException('$var1 не натуральное число');
+    }
+
+    if (!var2.isNatural) {
+      throw FormatException('$var2 не натуральное число');
+    }
+
+/*
+    if (var1 <= 0 || !var1.isInt) {
+      throw FormatException('$var1 не натуральное число');
+    }
+
+    if (var2 <= 0 || !var2.isInt) {
+      throw FormatException('$var2 не натуральное число');
+    }
+    */
 
     if (var1 > var2) {
       a = var1;
@@ -24,6 +47,14 @@ class Calculator {
   }
 
   int nok(int var1, int var2) {
+    if (!var1.isNatural) {
+      throw FormatException('$var1 не натуральное число');
+    }
+
+    if (!var2.isNatural) {
+      throw FormatException('$var2 не натуральное число');
+    }
+
     int result = var1 ~/ nod(var1, var2) * var2;
 
     return result;
@@ -51,8 +82,8 @@ class Calculator {
     return list;
   }
 
-  int dextobin(int number) {
-    int result = 0;
+  String dextobin(int number) {
+    String result = "";
     int a = number;
     int b = 0;
     int counter = 0;
@@ -66,20 +97,18 @@ class Calculator {
       counter++;
     }
 
-    result = int.parse(list.reversed.join(''));
+    result = (list.reversed.join(''));
 
     return result;
   }
 
-  int bintodex(int number) {
-    String str = '';
+  int bintodex(String number) {
     int result = 0;
 
-    str = number.toString();
-
-    if (RegExp(r'^[0-1]+$').hasMatch(str)) {
-      for (int i = 0; i < str.length; i++) {
-        result += (int.parse(str[i]) * pow(2, (str.length - i - 1))).toInt();
+    if (RegExp(r'^[0-1]+$').hasMatch(number)) {
+      for (int i = 0; i < number.length; i++) {
+        result +=
+            (int.parse(number[i]) * pow(2, (number.length - i - 1))).toInt();
       }
     }
     return result;

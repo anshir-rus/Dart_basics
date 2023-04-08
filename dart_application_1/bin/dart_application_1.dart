@@ -1,8 +1,8 @@
-import 'package:dart_application_1/calculator1-2-4-5.dart';
-import 'package:dart_application_1/stringworks-3.dart';
-import 'package:dart_application_1/point-6.dart';
-import 'package:dart_application_1/algorythm-7.dart';
-import 'package:dart_application_1/user-8.dart';
+import 'package:dart_application_1/calculator1_2_4_5.dart';
+import 'package:dart_application_1/stringworks_3.dart';
+import 'package:dart_application_1/point_6.dart';
+import 'package:dart_application_1/algorythm_7.dart';
+import 'package:dart_application_1/user_8.dart';
 
 void main(List<String> arguments) {
   var calculator = Calculator();
@@ -37,9 +37,10 @@ void main(List<String> arguments) {
 
   print("Задание 2");
   print(calculator.dextobin(117));
-  print(calculator.bintodex(1110101));
+  print(calculator.bintodex("1110101"));
   print("");
 
+/*
   print("Задание 3");
   print(stringworks.findnumbers("77 строка 123 с 456 числами 7 8 9"));
   print("");
@@ -65,15 +66,40 @@ void main(List<String> arguments) {
   double stepen = 2;
   print("Корень $stepen степени из $number: ${(number).sqrtAll(stepen)}");
   print("");
+*/
 
   print("Задание 8");
-  var generalUser = GeneralUser();
-  var adminUser = AdminUser();
+  var generalUser = GeneralUser("myname", "email111@email.ru");
+  var generalUser_2 = GeneralUser("Name2", "email2@email.ru");
+  var adminUser = AdminUser("admin", "admin@mail.ru");
   var userManager = UserManager();
+
+  print("Добавить в список");
+  userManager.addUser(generalUser);
+  userManager.addUser(generalUser_2);
+  userManager.addUser(adminUser);
+  print("");
+
+  print("Вернуть почту");
+  print(userManager.returnMailAll());
+  print("");
+
+  print("Вернуть cписок");
+  print(userManager.returnSpisok());
+  print("");
+
+  print("Удалить пользователя");
+  userManager.removeUser(generalUser_2);
+  print("");
+
+  print("Вернуть cписок");
+  print(userManager.returnSpisok());
+  print("");
 
   print("Проверка метода getMailSystem: " +
       adminUser.getMailSystem("admin@mail.ru"));
 
+/*
   print("Проверка добавления пользователя");
   userManager.AddUser("User5", "user5@mail.com");
   userManager.ReturnAll();
@@ -81,4 +107,5 @@ void main(List<String> arguments) {
   print("Проверка удаления пользователя");
   userManager.RemoveUser(2);
   userManager.ReturnAll();
+  */
 }
