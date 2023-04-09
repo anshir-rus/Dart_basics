@@ -27,22 +27,23 @@ mixin MailSytem {
 }
 
 class UserManager<T extends User> {
-  List spisok = <T>[];
+  List userList = <T>[];
 
-  addUser(T user) => spisok.add(user);
-  removeUser(T user) => spisok.removeAt(spisok.indexOf(user));
+  void addUser(T user) => userList.add(user);
+  void removeUser(T user) => userList.removeAt(userList.indexOf(user));
 
-  returnMailAll() {
-    for (var element in spisok) {
+  String returnMailAll() {
+    for (var element in userList) {
       if (element is AdminUser) {
         print(element.getMailSystem(element.email));
       } else {
         print(element.email);
       }
     }
+    return "";
   }
 
   List returnSpisok() {
-    return spisok;
+    return userList;
   }
 }

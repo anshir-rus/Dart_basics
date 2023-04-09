@@ -32,7 +32,7 @@ void main(List<String> arguments) {
   print("Задание 1:");
   print(calculator.nod(75, 210));
   print(calculator.nok(75, 210));
-  print(calculator.mnozh(75));
+  print(calculator.multipliers(75));
   print("");
 
   print("Задание 2");

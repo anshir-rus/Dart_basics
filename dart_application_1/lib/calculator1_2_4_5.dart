@@ -12,22 +12,12 @@ class Calculator {
     int c = 0;
 
     if (!var1.isNatural) {
-      throw FormatException('$var1 не натуральное число');
+      throw ArgumentError('$var1 не натуральное число');
     }
 
     if (!var2.isNatural) {
-      throw FormatException('$var2 не натуральное число');
+      throw ArgumentError('$var2 не натуральное число');
     }
-
-/*
-    if (var1 <= 0 || !var1.isInt) {
-      throw FormatException('$var1 не натуральное число');
-    }
-
-    if (var2 <= 0 || !var2.isInt) {
-      throw FormatException('$var2 не натуральное число');
-    }
-    */
 
     if (var1 > var2) {
       a = var1;
@@ -60,16 +50,15 @@ class Calculator {
     return result;
   }
 
-  List mnozh(int number) {
-    var list = [];
+  List multipliers(int number) {
+    var list = <int>[];
     int a = number;
     int ost = 0;
     int counter = 0;
     int divider = 2;
 
     while (a >= 2) {
-      //print(a);
-      ost = a % divider;
+      ost = (a % divider);
 
       if (ost == 0) {
         a = a ~/ divider;
@@ -88,7 +77,7 @@ class Calculator {
     int b = 0;
     int counter = 0;
 
-    var list = [];
+    var list = <int>[];
 
     while (a != 0) {
       b = a % 2;
@@ -114,7 +103,7 @@ class Calculator {
     return result;
   }
 
-  Map countWords<string, int>(List words) {
+  Map countWords<String, int>(List words) {
     var result = {};
 
     words.forEach((element) {
@@ -129,7 +118,7 @@ class Calculator {
   }
 
   List numbers(List string) {
-    var result = [];
+    var result = <String>[];
     int counter = 0;
     string.forEach((element) {
       switch (string[counter]) {
