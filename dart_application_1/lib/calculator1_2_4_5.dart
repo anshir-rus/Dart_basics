@@ -50,7 +50,7 @@ class Calculator {
     return result;
   }
 
-  List multipliers(int number) {
+  List<int> multipliers(int number) {
     var list = <int>[];
     int a = number;
     int ost = 0;
@@ -117,7 +117,7 @@ class Calculator {
     return result;
   }
 
-  List numbers(List string) {
+  List<String> numbers(List string) {
     var result = <String>[];
     int counter = 0;
     string.forEach((element) {
