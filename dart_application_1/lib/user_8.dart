@@ -5,14 +5,14 @@ class User {
 
 class AdminUser extends User with MailSytem {
   String name;
-  int dostup = 1;
+  int access = 1;
 
   AdminUser(this.name, super.email);
 }
 
 class GeneralUser extends User {
   String name;
-  int dostup = 0;
+  int access = 0;
 
   GeneralUser(this.name, super.email);
 }
@@ -27,7 +27,7 @@ mixin MailSytem {
 }
 
 class UserManager<T extends User> {
-  List userList = <T>[];
+  List<T> userList = <T>[];
 
   void addUser(T user) => userList.add(user);
   void removeUser(T user) => userList.removeAt(userList.indexOf(user));
@@ -43,7 +43,7 @@ class UserManager<T extends User> {
     return "";
   }
 
-  List returnSpisok() {
+  List<T> returnList() {
     return userList;
   }
 }

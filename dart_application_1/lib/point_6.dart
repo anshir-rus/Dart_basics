@@ -5,13 +5,7 @@ class Point {
   double y = 0;
   double z = 0;
 
-  static final List cache = [];
-
-  Point(double x1, double y1, double z1) {
-    x = x1;
-    y = y1;
-    z = z1;
-  }
+  Point(this.x, this.y, this.z);
 
   double distanceTo(Point another) {
     double distanceX = x - another.x;
@@ -29,16 +23,16 @@ class Point {
     double bc = b.distanceTo(c);
     double ca = c.distanceTo(a);
 
-    double pperimetr = ((ab + bc + ca) / 2);
+    double pperimeter = ((ab + bc + ca) / 2);
 
     double result = sqrt(
-        pperimetr * (pperimetr - ab) * (pperimetr - bc) * (pperimetr - ca));
+        pperimeter * (pperimeter - ab) * (pperimeter - bc) * (pperimeter - ca));
 
     return result;
   }
 
-  List mycoord() {
-    List result = [x, y, z];
+  List<double> mycoord() {
+    List<double> result = [x, y, z];
     return result;
   }
 

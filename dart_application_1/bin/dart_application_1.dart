@@ -40,7 +40,6 @@ void main(List<String> arguments) {
   print(calculator.bintodex("1110101"));
   print("");
 
-/*
   print("Задание 3");
   print(stringworks.findnumbers("77 строка 123 с 456 числами 7 8 9"));
   print("");
@@ -63,10 +62,9 @@ void main(List<String> arguments) {
 
   print("Задание 7");
   int number = 25;
-  double stepen = 2;
-  print("Корень $stepen степени из $number: ${(number).sqrtAll(stepen)}");
+  double degree = 2;
+  print("Корень $degree степени из $number: ${(number).sqrtAll(degree)}");
   print("");
-*/
 
   print("Задание 8");
   var generalUser = GeneralUser("myname", "email111@email.ru");
@@ -85,7 +83,7 @@ void main(List<String> arguments) {
   print("");
 
   print("Вернуть cписок");
-  print(userManager.returnSpisok());
+  print(userManager.returnList());
   print("");
 
   print("Удалить пользователя");
@@ -93,19 +91,9 @@ void main(List<String> arguments) {
   print("");
 
   print("Вернуть cписок");
-  print(userManager.returnSpisok());
+  print(userManager.returnList());
   print("");
 
   print("Проверка метода getMailSystem: " +
       adminUser.getMailSystem("admin@mail.ru"));
-
-/*
-  print("Проверка добавления пользователя");
-  userManager.AddUser("User5", "user5@mail.com");
-  userManager.ReturnAll();
-
-  print("Проверка удаления пользователя");
-  userManager.RemoveUser(2);
-  userManager.ReturnAll();
-  */
 }

@@ -1,5 +1,5 @@
 extension Algorythm on num {
-  double modul() {
+  double modulus() {
     double number = toDouble();
 
     number > 0 ? number : number *= -1;
@@ -10,11 +10,11 @@ extension Algorythm on num {
     double number = toDouble();
     double x0 = number / root;
     double xn = number;
-    double pogreshnost = 0.000000001;
+    double error = 0.000000001;
     int j = 0;
     int i = 0;
 
-    while ((x0 - xn).modul() >= pogreshnost) {
+    while ((x0 - xn).modulus() >= error) {
       xn = number;
       for (i = 1; i < root; i++) {
         xn = xn / x0;
@@ -23,8 +23,6 @@ extension Algorythm on num {
 
       j++;
     }
-    //print("Итераций: $j");
-    //print("Корень: $xn");
 
     return xn;
   }

@@ -1,16 +1,13 @@
 class StringWorks {
-  List findnumbers(String string) {
-    List first = [];
-    List result = [];
-    int j = 0;
+  List<int> findnumbers(String string) {
+    List<String> first = <String>[];
+    List<int> result = <int>[];
 
     first = string.split(' ');
-    // print(first.length);
 
     for (int i = 0; i < first.length; i++) {
       if (RegExp(r'^[0-9]+$').hasMatch(first[i])) {
-        result.insert(j, first[i]);
-        j++;
+        result.add(int.parse(first[i]));
       }
     }
 

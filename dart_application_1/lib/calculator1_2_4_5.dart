@@ -119,9 +119,9 @@ class Calculator {
 
   List<String> numbers(List string) {
     var result = <String>[];
-    int counter = 0;
+
     string.forEach((element) {
-      switch (string[counter]) {
+      switch (element) {
         case 'one':
           result.add("1");
           break;
@@ -150,7 +150,6 @@ class Calculator {
           result.add("9");
           break;
       }
-      counter++;
     });
     return result;
   }
