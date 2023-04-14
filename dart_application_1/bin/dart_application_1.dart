@@ -83,7 +83,8 @@ void main(List<String> arguments) {
   print("");
 
   print("Вернуть cписок");
-  print(userManager.returnList());
+  print(userManager.returnList);
+  //print(userManager.returnList());
   print("");
 
   print("Удалить пользователя");
@@ -91,7 +92,8 @@ void main(List<String> arguments) {
   print("");
 
   print("Вернуть cписок");
-  print(userManager.returnList());
+  print(userManager.returnList);
+  //print(userManager.returnList());
   print("");
 
   print("Проверка метода getMailSystem: " +
