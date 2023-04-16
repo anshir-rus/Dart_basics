@@ -103,12 +103,13 @@ class Calculator {
     return result;
   }
 
-  Map countWords<String, int>(List words) {
-    var result = {};
+  Map<String, int> countWords(List words) {
+    var result = <String, int>{};
 
     words.forEach((element) {
       if (result.containsKey(element)) {
-        result[element] += 1;
+        int? temp = result[element];
+        result[element] = temp! + 1;
       } else {
         result[element] = 1;
       }
@@ -117,37 +118,37 @@ class Calculator {
     return result;
   }
 
-  List<String> numbers(List string) {
-    var result = <String>[];
+  List<int> numbers(List string) {
+    var result = <int>[];
 
     string.forEach((element) {
       switch (element) {
         case 'one':
-          result.add("1");
+          result.add(1);
           break;
         case 'two':
-          result.add("2");
+          result.add(2);
           break;
         case 'three':
-          result.add("3");
+          result.add(3);
           break;
         case 'four':
-          result.add("4");
+          result.add(4);
           break;
         case 'five':
-          result.add("5");
+          result.add(5);
           break;
         case 'six':
-          result.add("6");
+          result.add(6);
           break;
         case 'seven':
-          result.add("7");
+          result.add(7);
           break;
         case 'eight':
-          result.add("8");
+          result.add(8);
           break;
         case 'nine':
-          result.add("9");
+          result.add(9);
           break;
       }
     });

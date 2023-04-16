@@ -79,7 +79,7 @@ void main(List<String> arguments) {
   print("");
 
   print("Вернуть почту");
-  print(userManager.returnMailAll());
+  userManager.returnMailAll();
   print("");
 
   print("Вернуть cписок");

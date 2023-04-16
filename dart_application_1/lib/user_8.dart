@@ -32,7 +32,7 @@ class UserManager<T extends User> {
   void addUser(T user) => _userList.add(user);
   void removeUser(T user) => _userList.removeAt(_userList.indexOf(user));
 
-  String returnMailAll() {
+  void returnMailAll() {
     for (var element in _userList) {
       if (element is AdminUser) {
         print(element.getMailSystem(element.email));
@@ -40,7 +40,6 @@ class UserManager<T extends User> {
         print(element.email);
       }
     }
-    return "";
   }
 
   List<T> get returnList => _userList;
